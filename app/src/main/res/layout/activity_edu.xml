@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".activity.EduActivity"
+    >
+
+    <LinearLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="horizontal"
+        >
+
+        <LinearLayout
+            android:layout_width="120dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:background="@drawable/search"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            >
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/search"
+                android:background="@drawable/input_none"
+                android:id="@+id/iptKeyword"
+                android:hint="关键字"
+                android:imeOptions="actionSearch"
+                android:singleLine="true"
+                android:inputType="text"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:text="学前"
+            android:textSize="13dp"
+            android:background="@drawable/button_bluex7"
+            android:textColor="#fff"
+            android:onClick="smallSchool"
+            />
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:text="小学"
+            android:background="@drawable/button_empty"
+            android:textColor="#666666"
+            android:layout_marginLeft="5dp"
+            android:onClick="middleSchool"
+            />
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:text="中学"
+            android:background="@drawable/button_empty"
+            android:textSize="13dp"
+            android:textColor="#666"
+            android:layout_marginLeft="5dp"
+            android:onClick="bigSchool"
+            />
+
+
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:paddingRight="1dp"
+                android:layout_marginTop="10dp"
+                >
+
+                <com.youth.banner.Banner
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:gravity="center|left"
+                android:layout_marginBottom="10dp"
+                >
+
+                <TextView
+                    android:layout_width="4dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/button_blue"
+                    android:layout_marginRight="10dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="课程分类"
+                    android:textColor="@color/comm_color"
+                    android:textSize="17dp"
+                    android:textStyle="bold"
+                    />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="210dp"
+                    android:layout_weight="2"
+                    android:paddingRight="10dp"
+                    >
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="190dp"
+                        android:layout_weight="2"
+                        android:scaleType="fitXY"
+                        android:id="@+id/firstIv"
+                        android:onClick="onClickFirst"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="top"
+                    >
+
+                    <ListView
+                        android:fadingEdge="none"
+                        android:divider="#00000000"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/lvFirst"
+                        ></ListView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                >
+
+                <GridView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:numColumns="3"
+                    android:id="@+id/lvSec"
+                    android:stretchMode="columnWidth"
+                    android:fadingEdgeLength="0dp"
+                    android:verticalSpacing="0dp"
+                    android:horizontalSpacing="5dp"
+                    ></GridView>
+
+            </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/comm_menu"
+        layout="@layout/include_menu"
+        android:gravity="bottom"
+        />
+
+</LinearLayout>

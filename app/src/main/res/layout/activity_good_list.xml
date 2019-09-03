@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activity.GoodListActivity"
+    android:orientation="vertical">
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/Main_SRLayout"
+        tools:ignore="MissingConstraints"
+        android:layout_weight="1"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center"
+                app:layout_constraintTop_toTopOf="parent"
+                android:orientation="horizontal"
+                android:background="#dcdcdc"
+                >
+
+                <EditText
+                    android:layout_width="280dp"
+                    android:layout_height="35dp"
+                    android:drawableLeft="@mipmap/search"
+                    android:drawableRight="@mipmap/closed"
+                    android:background="@drawable/search_input"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:hint="关键字"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="6"
+                    android:textSize="14dp"
+                    android:id="@+id/etKeyword"
+                    android:imeOptions="actionSearch"
+                    android:singleLine="true"
+                    />
+
+                <TextView
+                    android:id="@+id/cartnum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableRight="@mipmap/ico_cart" />
+
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView1"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal" >
+
+                    <GridView
+                    android:id="@+id/category"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:numColumns="auto_fit"
+                        android:scrollbars="none"
+                    >
+                    </GridView>
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@drawable/background_gradientx2">
+            </LinearLayout>
+
+
+            <cn.lanru.lrapplication.utils.MyGridView
+                android:id="@+id/myGoodList"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:numColumns="2"
+                android:padding="10dp"
+                android:horizontalSpacing="10dp"
+                android:layout_weight="1"
+                android:scrollbars="none"
+                ></cn.lanru.lrapplication.utils.MyGridView>
+
+
+
+
+        </LinearLayout>
+
+
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    <include
+        android:id="@+id/comm_menu"
+        layout="@layout/include_menu"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="bottom"
+        />
+
+</LinearLayout>

@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activity.ShopActivity"
+    android:orientation="vertical">
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/Main_SRLayout"
+        app:srlEnableLoadMoreWhenContentNotFull="false"
+        android:layout_weight="1"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="horizontal"
+            android:background="#dcdcdc"
+            >
+
+            <EditText
+                android:layout_width="280dp"
+                android:layout_height="35dp"
+                android:drawableLeft="@mipmap/search"
+                android:drawableRight="@mipmap/closed"
+                android:background="@drawable/search_input"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:hint="关键字"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="6"
+                android:textSize="14dp"
+                android:id="@+id/etKeyword"
+                android:imeOptions="actionSearch"
+                android:singleLine="true"
+                />
+
+            <TextView
+                android:id="@+id/cartnum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawableRight="@mipmap/ico_cart" />
+
+        </LinearLayout>
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="110dp"
+                        android:background="#dcdcdc"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        >
+
+                        <com.youth.banner.Banner
+                            xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:id="@+id/banner"
+                            android:layout_width="match_parent"
+                            android:layout_height="110dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#efefef"
+                        android:orientation="vertical"
+                        >
+
+                        <GridView
+                            android:layout_width="match_parent"
+                            android:layout_height="70dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:numColumns="3"
+                            android:id="@+id/gvCategory"
+                            android:horizontalSpacing="10dp"
+                            />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/layout_border_white"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:orientation="vertical"
+                            >
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:gravity="center"
+                                >
+                                <!--//秒杀-->
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="2"
+                                    android:orientation="vertical"
+                                    android:background="@drawable/layout_border_right_bottom"
+                                    android:paddingBottom="5dp"
+                                    >
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:paddingTop="10dp"
+                                        android:paddingBottom="10dp"
+                                        android:gravity="center|left"
+                                        >
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="限时秒杀"
+                                            android:textSize="16dp"
+                                            android:textColor="@color/comm_color"
+                                            android:paddingLeft="5dp"
+                                            />
+
+                                        <TextView
+                                            android:layout_width="18dp"
+                                            android:layout_height="15dp"
+                                            android:text="00"
+                                            android:textSize="12dp"
+                                            android:ellipsize="end"
+                                            android:background="@drawable/block_x1"
+                                            android:textColor="#ffffff"
+                                            android:textAlignment="center"
+                                            />
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=":"
+                                            android:textSize="12dp"
+                                            android:ellipsize="end"
+                                            />
+                                        <TextView
+                                            android:layout_width="18dp"
+                                            android:layout_height="15dp"
+                                            android:text="00"
+                                            android:textSize="12dp"
+                                            android:ellipsize="end"
+                                            android:background="@drawable/block_x1"
+                                            android:textColor="#ffffff"
+                                            android:textAlignment="center"
+                                            />
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text=":"
+                                            android:textSize="12dp"
+                                            android:ellipsize="end"
+                                            />
+                                        <TextView
+                                            android:layout_width="18dp"
+                                            android:layout_height="15dp"
+                                            android:text="00"
+                                            android:textSize="12dp"
+                                            android:ellipsize="end"
+                                            android:background="@drawable/block_x1"
+                                            android:textColor="#ffffff"
+                                            android:textAlignment="center"
+                                            />
+
+                                    </LinearLayout>
+                                    <!--
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="120dp"
+                                        android:orientation="horizontal"
+                                        android:paddingRight="5dp"
+                                        android:paddingLeft="5dp"
+                                        >
+
+                                        <ImageView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="120dp"
+                                            android:layout_marginRight="5dp"
+                                            android:scaleType="fitXY"
+                                            android:src="@mipmap/cart_pic"
+                                            android:layout_weight="1"/>
+
+                                        <ImageView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="120dp"
+                                            android:src="@mipmap/cart_pic"
+                                            android:scaleType="fitXY"
+                                            android:layout_weight="1"
+                                            />
+
+                                    </LinearLayout>
+                                    -->
+
+
+                                </LinearLayout>
+
+                                <!--//拼团-->
+                                <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="0dp"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:paddingBottom="10dp"
+                                    android:background="@drawable/layout_border_bottom"
+                                    android:paddingLeft="5dp"
+                                    >
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        android:paddingTop="10dp"
+                                        android:paddingBottom="10dp"
+                                        android:gravity="center|left"
+                                        >
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="拼团"
+                                            android:textSize="16dp"
+                                            android:textColor="@color/comm_color"
+                                            />
+
+                                        <TextView
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="3000人正在拼"
+                                            android:textColor="#ff5700"
+                                            android:textSize="12dp"
+                                            android:ellipsize="end"
+                                            />
+
+                                    </LinearLayout>
+                                    <!--
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="120dp">
+
+                                        <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="120dp"
+                                            android:src="@mipmap/cart_pic"
+                                            android:scaleType="fitXY"
+                                            />
+
+                                    </LinearLayout>-->
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center">
+                                <!--//砍价-->
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical"
+                                    android:background="@drawable/layout_border_right"
+                                    android:paddingRight="5dp"
+                                    android:paddingLeft="5dp"
+
+                                    >
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="砍价"
+                                        android:textColor="@color/comm_color"
+                                        android:textSize="16dp"
+                                        android:textStyle="bold"
+                                        android:paddingTop="10dp"
+                                        android:paddingBottom="10dp"
+                                        />
+                                    <!--
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="120dp"
+                                        android:src="@mipmap/cart_pic"
+                                        android:scaleType="fitXY"
+                                        />-->
+
+                                </LinearLayout>
+
+                                <!--//优惠券-->
+                                <LinearLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="fill_parent"
+                                    android:layout_weight="2"
+                                    android:orientation="vertical"
+                                    android:paddingLeft="5dp"
+                                    android:paddingRight="5dp"
+                                    >
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="优惠券"
+                                        android:textColor="@color/comm_color"
+                                        android:textSize="16dp"
+                                        android:textStyle="bold"
+                                        android:paddingTop="10dp"
+                                        android:paddingBottom="10dp"
+                                        />
+
+                                    <ImageView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="120dp"
+                                        android:src="@mipmap/coupon"
+                                        android:scaleType="fitXY"
+                                        />
+
+
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:orientation="vertical"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:layout_weight="1"
+                            >
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center|left"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="5dp"
+                                >
+                                <TextView
+                                    android:layout_width="8dp"
+                                    android:layout_height="30dp"
+                                    android:background="@drawable/button_blue"
+                                    />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="热门推荐"
+                                    android:textSize="17dp"
+                                    android:textColor="@color/comm_color"
+                                    android:textStyle="bold"
+                                    android:layout_marginLeft="10dp"
+                                    />
+
+                            </LinearLayout>
+
+                            <cn.lanru.lrapplication.utils.MyGridView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:numColumns="2"
+                                android:stretchMode="columnWidth"
+                                android:horizontalSpacing="10dp"
+                                android:id="@+id/gvGoods"
+                                android:verticalSpacing="10dp"
+                                android:layout_marginBottom="20dp"
+                                android:scrollbars="none"
+                                />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v4.widget.NestedScrollView>
+
+        </LinearLayout>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/comm_menu"
+        layout="@layout/include_menu"
+        android:gravity="bottom"
+        />
+
+
+</LinearLayout>

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.MiddleActivity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="120dp"
+            android:layout_height="35dp"
+            android:gravity="center"
+            android:background="@drawable/search"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            >
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/search"
+                android:background="@drawable/input_none"
+                android:id="@+id/iptKeyword"
+                android:hint="关键字"
+                android:imeOptions="actionSearch"
+                android:singleLine="true"
+                android:inputType="text"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:text="学前"
+            android:textSize="13dp"
+            android:background="@drawable/button_empty"
+            android:textColor="#666666"
+            android:onClick="smallSchool"
+            />
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:text="小学"
+            android:background="@drawable/button_empty"
+            android:textColor="#666"
+            android:layout_marginLeft="5dp"
+            android:onClick="middleSchool"
+            />
+        <Button
+            android:layout_width="60dp"
+            android:layout_height="30dp"
+            android:text="中学"
+            android:background="@drawable/button_bluex7"
+            android:textSize="13dp"
+            android:textColor="#fff"
+            android:layout_marginLeft="5dp"
+            android:onClick="bigSchool"
+            />
+
+
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_weight="1"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!--//我的体验记录-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center|left"
+                >
+                <TextView
+                    android:layout_width="4dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/button_blue"
+                    android:layout_marginRight="10dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="我的体验记录"
+                    android:textSize="17dp"
+                    android:textColor="@color/comm_color"
+                    android:textStyle="bold"
+                    />
+
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+                    <GridView
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:numColumns="auto_fit"
+                        android:id="@+id/gvExperience"
+                        android:verticalSpacing="10dp"
+                        android:horizontalSpacing="10dp"
+                        android:cacheColorHint="#00000000"
+                        android:listSelector="#00000000"
+                        android:scrollbars="none"
+                        android:gravity="center"
+                        android:stretchMode="spacingWidthUniform"
+                        ></GridView>
+
+
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <!--//推荐-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center|left"
+                android:layout_marginTop="10dp"
+                >
+                <TextView
+                    android:layout_width="4dp"
+                    android:layout_height="15dp"
+                    android:background="@drawable/button_blue"
+                    android:layout_marginRight="10dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="同步培优"
+                    android:textSize="17dp"
+                    android:textColor="@color/comm_color"
+                    android:textStyle="bold"
+                    />
+
+            </LinearLayout>
+
+            <GridView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:numColumns="2"
+                android:id="@+id/gvCategory"
+                android:verticalSpacing="10dp"
+                android:horizontalSpacing="10dp"
+                android:cacheColorHint="#00000000"
+                android:listSelector="#00000000"
+                android:scrollbars="none"
+                ></GridView>
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/school_x11"
+                android:id="@+id/s_banner"
+                android:scaleType="fitXY"
+                />
+
+
+            <GridView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:numColumns="2"
+                android:id="@+id/gvCategory1"
+                android:verticalSpacing="10dp"
+                android:horizontalSpacing="10dp"
+                android:cacheColorHint="#00000000"
+                android:listSelector="#00000000"
+                android:scrollbars="none"
+                ></GridView>
+
+
+            <GridView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:numColumns="3"
+                android:id="@+id/gvCategory2"
+                android:verticalSpacing="10dp"
+                android:horizontalSpacing="10dp"
+                android:cacheColorHint="#00000000"
+                android:listSelector="#00000000"
+                android:scrollbars="none"
+                ></GridView>
+
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/comm_menu"
+        layout="@layout/include_menu"
+        android:gravity="bottom"
+        />
+
+</LinearLayout>
